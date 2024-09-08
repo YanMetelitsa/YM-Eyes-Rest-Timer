@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<!-- Main header -->
+		<header class="main-header">
+			<h1>Eye Rest Timer</h1>
+
+			<div class="switcher" on-action="createAlarm" off-action="removeAlarm"></div>
+		</header>
+
+		<!-- Settings -->
+		<form>
+			<div class="settings">
+				<div class="settings__item">
+					<label for="setting-delay">Как часто напоминать?</label>
+					<div class="settings__item-input">
+						<input type="number" id="setting-delay" min="1" step="1" required readonly>
+						<span>мин.</span>
+					</div>
+				</div>
+
+				<div class="settings__item">
+					<label for="setting-title">Заголовок</label>
+					<input type="text" id="setting-title" required readonly>
+				</div>
+
+				<div class="settings__item">
+					<label for="setting-message">Сообщение</label>
+					<textarea id="setting-message" rows="4" required readonly></textarea>
+				</div>
+	
+				<!-- <div class="settings__item">
+					<button class="button" disabled>
+						<span>Сохранить</span>
+					</button>
+				</div> -->
+			</div>
+	
+			<!-- Navigation -->
+			<nav class="alarm-info">
+				<span class="alarm-info__enable">Следующее напоминание в <span>...</span></span>
+				<span class="alarm-info__disable">Напоминания выключены</span>
+			</nav>
+		</form>
+
+		<!-- Scripts -->
+		<script src="js/scripts.js"></script>
+	</body>
+</html>

@@ -1,0 +1,175 @@
+:root {
+  /* Colors */
+  --white: #fff;
+  --black: #050505;
+  --primary-background: #fff;
+  --secondary-background: #F4F4F4;
+  --tertiary-background: #D9D9D9;
+  --primary-content: #050505;
+  --primary-color: #493CE8;
+  /* Animations */
+  --fast-animation: ease-in-out .05s;
+  --common-animation: ease-in-out .1s;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-background: #2B2B2B;
+    --secondary-background: #333333;
+    --tertiary-background: #454545;
+    --primary-content: #fff;
+  }
+}
+
+/* Reset */
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: var(--primary-content);
+}
+
+body {
+  background-color: var(--secondary-background);
+  min-width: 350px;
+  margin: 0;
+}
+
+label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+input,
+textarea {
+  background-color: var(--primary-background);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--primary-content);
+  outline-color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  resize: vertical;
+  color: var(--primary-content);
+}
+
+button {
+  background-color: var(--primary-content);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--fast-animation);
+}
+button span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--primary-background);
+  transition: color var(--fast-animation);
+}
+button:hover {
+  background-color: var(--primary-color);
+}
+button:hover span {
+  color: var(--white);
+}
+
+/* Main */
+.main-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-header h1 {
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* Parts */
+.settings {
+  background-color: var(--primary-background);
+  margin: 0 10px 10px 10px;
+  padding: 10px 0;
+  border: 1px solid var(--tertiary-background);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.settings__item {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.settings__item-input {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.settings__item-input input {
+  flex: 1;
+}
+
+.alarm-info {
+  padding: 0 20px 10px 20px;
+  opacity: 0.75;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+}
+.alarm-info span.hidden {
+  display: none;
+}
+
+/* Components */
+.switcher {
+  --size: 26px;
+  --k: 0.7;
+  background-color: var(--primary-background);
+  width: calc(var(--size) * 2);
+  height: var(--size);
+  border-radius: var(--size);
+  border: 1px solid var(--primary-content);
+  position: relative;
+  cursor: pointer;
+}
+.switcher::after {
+  content: "";
+  background-color: var(--primary-content);
+  width: calc(var(--size) * var(--k));
+  height: calc(var(--size) * var(--k));
+  border-radius: 50%;
+  position: absolute;
+  top: calc(var(--size) * (1 - var(--k)) / 2);
+  left: calc(var(--size) * (1 - var(--k)) / 2);
+}
+.switcher.inited {
+  transition: all var(--common-animation);
+}
+.switcher.inited::after {
+  transition: all var(--common-animation);
+}
+.switcher[active] {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.switcher[active]::after {
+  background-color: var(--white);
+  transform: translateX(var(--size));
+}
+
+/*  Yan Metelitsa    __  
+ *  yanmet.com      / _) 
+ *  dev      .-^^^-/ /   
+ *        __/       /    
+ *       <__.|_|-|_|   *//*# sourceMappingURL=style.css.map */
