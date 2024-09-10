@@ -1,18 +1,18 @@
 {
-    "manifest_version": 3,
-    "name": "YM Eyes Rest Timer",
-    "description": "Менеджер напоминаний упражнений для глаз",
-    "author": "Yan Metelitsa",
-    "version": "0.0.8",
+	"manifest_version": 3,
+	"name": "YM Eyes Rest Timer",
+	"description": "Менеджер напоминаний упражнений для глаз.",
+	"author": "Yan Metelitsa",
+	"version": "0.0.8",
 	"icons": {
 		"128": "icons/icon-128-white.png"
 	},
-    "action": {
+	"action": {
 		"default_icon": {
 			"128": "icons/icon-128-white.png"
 		},
-        "default_popup": "index.html"
-    },
+		"default_popup": "index.html"
+	},
 	"permissions": [
 		"alarms",
 		"notifications",
