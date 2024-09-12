@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "YM Eyes Rest Timer",
-	"description": "Менеджер напоминаний упражнений для глаз.",
+	"description": "Eye exercise reminder manager.",
 	"author": "Yan Metelitsa",
 	"version": "0.0.8",
 	"icons": {
