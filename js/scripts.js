@@ -1,6 +1,6 @@
 'use strict';
 
-/** Main elements */
+/* Main elements */
 const mainElements = {
 	mainSwitcher: document.querySelector( '.main-header .switcher' ),
 
@@ -12,18 +12,18 @@ const mainElements = {
 	alarmInfoDisable: document.querySelector( '.alarm-info__disable' ),
 };
 
-/** Inits elements */
+/* Inits elements */
 const Init = {
 	switchers: () => {
-		/** Get switchers */
+		/* Get switchers */
 		const switchers = document.querySelectorAll( '.switcher' );
 
-		/** Loop */
+		/* Loop */
 		switchers.forEach( switcher => {
 			switcher.addEventListener( 'click', e => {
 				switcher.toggleAttribute( 'active' );
 				
-				/** Look for action */
+				/* Look for action */
 				let actionName = null;
 
 				if ( switcher.hasAttribute( 'active' ) ) {
@@ -32,7 +32,7 @@ const Init = {
 					actionName = switcher.getAttribute( 'off-action' ) ?? null;
 				}
 
-				/** Do action */
+				/* Do action */
 				if ( actionName ) window[ actionName ]();
 			});
 
@@ -95,6 +95,7 @@ function createAlarm () {
 		Init.alarmInfo();
 	});
 }
+
 /**
  * Receives alarm data and passes it to the callback function.
  * 
@@ -103,6 +104,7 @@ function createAlarm () {
 function getAlarm ( callBack = () => {} ) {
 	chrome.alarms.get( 'eye-timer-alarm', alarm => callBack( alarm ) );
 }
+
 /**
  * Removes alaram.
  */
@@ -112,7 +114,7 @@ function removeAlarm () {
 	});
 }
 
-/** Window load event */
+/* Window load event */
 window.addEventListener( 'load', e => {
 	Init.switchers();
 

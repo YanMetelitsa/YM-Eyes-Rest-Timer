@@ -22,6 +22,7 @@ function setDefaultLocalStorage () {
 		},
 	});
 }
+
 /**
  * Receives local storage data and passes it to the callback function.
  * 
@@ -32,6 +33,7 @@ function getLocalStorage ( callBack = () => {} ) {
 		callBack( storage );
 	});
 }
+
 /**
  * Clears local storage.
  */
@@ -61,7 +63,7 @@ function getVersion ( callBack = () => {} ) {
 	});
 }
 
-/** On message */
+/* On message */
 chrome.runtime.onMessage.addListener( message => {
 	const messageActions = {
 	
@@ -70,7 +72,7 @@ chrome.runtime.onMessage.addListener( message => {
 	messageActions[ message.action ]( message.args );
 });
 
-/** On alarm */
+/* On alarm */
 chrome.alarms.onAlarm.addListener( alram => {
 	getSettings( settings => {
 		chrome.notifications.create( 'eyes-rest-timer-main', {
@@ -86,10 +88,11 @@ chrome.alarms.onAlarm.addListener( alram => {
 	});
 });
 
-/** Setup */
+/* Setup */
 getVersion( version => {
 	if ( !version || version !== getManifestVersion() ) {
 		setDefaultLocalStorage();
 	}
 });
+
 getLocalStorage( storage => console.log( storage ) );
